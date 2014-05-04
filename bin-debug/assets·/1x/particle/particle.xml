@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="particle.png">
+	<SubTexture name="img_5" x="0" y="0" width="92" height="92"
+		frameX="-13" frameWidth="128" frameY="-15" frameHeight="128" />
+	<SubTexture name="img_particle" x="0" y="94" width="63"
+		height="64" frameX="0" frameWidth="64" frameY="0" frameHeight="64" />
+</TextureAtlas>
