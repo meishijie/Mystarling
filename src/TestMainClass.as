@@ -68,6 +68,7 @@ package
 			n_t = new starling.text.TextField(200,100,"loading....");
 			n_t.x = (STLConstant.StageWidth - textfield.width)/2;
 			n_t.y = (STLConstant.StageHeight - textfield.height)/2;
+			n_t.autoScale = true;
 			addChild(n_t);
 			
 			addEventListener(starling.events.Event.ENTER_FRAME, iterate);		
