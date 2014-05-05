@@ -97,6 +97,7 @@ package lzm.starling
 				isPc ? stage.stageHeight : stage.fullScreenHeight
 			);
 			STLConstant.scale = viewPort.width > HDWidth ? 2 : 1;//Capabilities.screenDPI > 200 ? 2 : 1;
+			trace("viewPort.width "+ viewPort.width);
 			STLConstant.StageWidth = viewPort.width * (1/STLConstant.scale);
 			STLConstant.StageHeight = viewPort.height * (1/STLConstant.scale);
 			

@@ -92,7 +92,7 @@ package
 				if (message is StartResponse) {	
 					var startResponse:StartResponse = message as StartResponse;
 					if (startResponse.getStartStatus() == StartStatus.READY) {
-						GameGo();//游戏开始
+						GameGo();//联机准备好，开始获取房间信息
 					} else if (startResponse.getStartStatus() == StartStatus.WARNED) {
 
 						n_t.text = "Connection Warned with Nuggeta";
@@ -121,6 +121,7 @@ package
 						trace("已经加入游戏，游戏正式开始");
 						n_t.text = "已经加入游戏，游戏正式开始";
 						trace(JoinGameStatus.ACCEPTED);
+						gameStart();
 					}
 				}else if (message is GetGamesResponse) //获取游戏房间 如果有 直接进入 没有就创建房间
 					{
@@ -154,9 +155,18 @@ package
 
 		
 		
-		private function GameGo():void{
+		private function GameGo():void{//联机准备好 开始获取房间信息
+
+			var nuggetaQuery:NuggetaQuery = new NuggetaQuery();
+			nuggetaQuery.setStart(0);
+			nuggetaQuery.setLimit(10);
+			nuggetaPlug.getGames(nuggetaQuery);
+			//获取游戏房间
+			trace("getgames");
 			
-		/*	n_t.text = "ready";
+		}
+		private function gameStart():void{
+			n_t.text = "GOGOGO";
 			var mc1:SwfMovieClip = assets.createMovieClip("mc_Tain");
 			addChild(mc1);
 			
@@ -165,15 +175,7 @@ package
 			mc1.gotoAndPlay("walk");
 			mc1.loop = false;
 			
-			n_t.removeFromParent(true);*/
-			
-			var nuggetaQuery:NuggetaQuery = new NuggetaQuery();
-			nuggetaQuery.setStart(0);
-			nuggetaQuery.setLimit(10);
-			nuggetaPlug.getGames(nuggetaQuery);
-			//获取游戏房间
-			trace("getgames");
-			
+			n_t.removeFromParent(true);
 		}
 		//游戏开始
 

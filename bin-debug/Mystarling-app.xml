@@ -47,6 +47,7 @@
 		<!-- The main SWF or HTML file of the application. Required. -->
 		<!-- Note: In Flash Builder, the SWF reference is set automatically. -->
 		<content>Mystarling.swf</content>
+		
 		<renderMode>direct</renderMode>
 		<!-- The title of the main window. Optional. -->
 		<!-- <title></title> -->
@@ -93,7 +94,7 @@
 
 		<!-- The aspect ratio of the app ("portrait" or "landscape" or "any"). 
 			Optional. Mobile only. Default is the natural orientation of the device -->
-
+		<aspectRatio>portrait</aspectRatio>
 		<!-- <aspectRatio></aspectRatio> -->
 
 		<!-- Whether the app will begin auto-orienting on launch. Optional. Mobile 
